@@ -38,7 +38,7 @@ sp4rk{r3f3r_http_15_gr34t}c7f
 -----------------------------
 access Denied : 30 PTS
 a message is set in the main page of this task tell us that the acces is denied from your country: TN and under this message there 
-is a picture of an italian sign. "eh bein" you have to use a web italian proxy.
+is a picture of an italian sign. "eh bein" you have to use a web italian proxy. flag is : sp4rk{som3_tim3s_y0u_n33d_70_hid3_y0ur_id3ntity}c7f
 
 -----------------------------
 Level Adem Task: 75 PTS:
@@ -64,7 +64,7 @@ and finaly after a little while you get the flag:  sp4rk{17_74k35_4_l177l3_wh1l3
 Forensics
 weblog : 150 PTS :
 a file log has been gived with 3.2 Mbytes . this file is encrypted twice with base 64 then with url encode after a decoding our
-log we find 5300 request. we find also that the most of request contain an ">" but there is some request which contain "=" to an 
+log we find 5300 request. we find also that the most of request contain an ">" but there is some request which contain "!=" to an 
 ascii value : we have than to use a litle script to pick up those request : https://drive.google.com/open?id=1SidJ8wsRbExBizQRoxoqzCodHf37eRgz
 and after getting the ascii we have just to convert it to text and get : sp4rk{1_n33d_c0ff33_70_br34k_7h15_ 5h337}c7f 
 
