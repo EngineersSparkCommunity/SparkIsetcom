@@ -1,8 +1,11 @@
+WEB CONTEST :
+
 Bypass Attack: 10 PTS
 in this task you have to add /admin to the url and try a basic login and password like : admin,admin. a message will be loaded:
 Method Not Allowed. you have just to  inspect form element change method from post to get and retry the connexion with admin,admin
 the flag will appear: sp4rk{m37h0d_4dm1n_1s_t00_345y_w417_f0r_7h3_n3x7}c7f 
 
+-----------------------------
 cookies are sweet  : 15 PTS
 in this task , we try like every time a basic login and password : admin,admin but the result of the request will be an admin joke : 
 the flag is : ZmM0ZXh7Z3V2Zl92Zl9hYmdfZ3VyX3N5NF99cDdz== => fc4ex{guvf_vf_abg_gur_sy4_}p7s => sp4rk{this_is_not_the_fl4_}c7f
@@ -10,6 +13,69 @@ we try to search into the http request values and we will find set-cookie :user=
 that tell you : <!--this form is checked by mr  AO try not to inject it--> you have just to change the cookies value : souad with 
 AO in the verif.php. and the flag is : sp4rk{c00k135_4r3_500_5w337}c7f
 
+-----------------------------
 ATTACK SQL : 20 PTS
 this is the most simple task , if we say attack sql we say sql injection or nosql injection, we  try a basic attack like :
 login : admin and password : "'or'1'='1 and the flag is :   sp4rk{1nj3c710n_15_b4d}c7f
+
+-----------------------------
+jsFuck: 20 PTS
+the name of the task is the hint for the flag. you have just to view the source code , the main.js file then you have to download
+the source in a file. and from the terminal you write : nodejs main.js  and the flag is : sp4rk{0ld_0bfus4710n_bu7_1t_s733l_g0ld}c7f
+you can deofuscate js fuck code than deofuscate the result another time with jsdeofuscator tools online.
+
+-----------------------------
+Reference Page :25 PTS 
+in this task a msg " you must use some HTTP reference magic"  will apear with a form . you can use like every time admin,admin but 
+it s steal the same message. than after a little search you wil find that curl unix command may be useful.we try :
+curl --referer www.google.com localhost/ctf/ReferTask/ the result is :the flag is : 
+sp4rk{t4j1n}c7f hahahahahahah this is not the flag you may visit <!-- isetcom-->  .
+isetcom is a referer site used we try :curl --referer http://www.isetcom.com localhost/ctf/ReferTask/ the message is :
+so bad damn so bad you have to learn ssl or you have to eat tajin to become smart.
+finally i will change http by https for isetcom url  :curl --referer https://www.isetcom.com localhost/ctf/ReferTask/.the flag is :
+sp4rk{r3f3r_http_15_gr34t}c7f
+
+-----------------------------
+access Denied : 30 PTS
+a message is set in the main page of this task tell us that the acces is denied from your country: TN and under this message there 
+is a picture of an italian sign. "eh bein" you have to use a web italian proxy.
+
+-----------------------------
+Level Adem Task: 75 PTS:
+
+in this task you have to attack the root-me server using the task double extension upload and got the username of the personal
+Directory of the usser sshd and the dirctory of used shell of the user sshd . you will find in this link a  script which is included
+into a picture to be uploaded.(open the picture using a text editor). the script will contain also a lot of stuffs picked from the 
+server :
+https://drive.google.com/open?id=1SHXK4fYFPxIJUBc7pj6GjpRO6tCdPQB2
+the flag is :sp4rk{sshdnologin}c7f
+
+
+*********************************************************************************************************************************
+
+Programming 
+FILEZ ZIP : 75 PTS
+you have to write a script and to use fcrackzip and the rockyou lib in this link you find my script.
+link : https://drive.google.com/open?id=1VM50zeYFD1OMG--u3cP4UIo-olrX-1z2
+and finaly after a little while you get the flag:  sp4rk{17_74k35_4_l177l3_wh1l3}c7f
+
+*********************************************************************************************************************************
+
+Forensics
+weblog : 150 PTS :
+a file log has been gived with 3.2 Mbytes . this file is encrypted twice with base 64 then with url encode after a decoding our
+log we find 5300 request. we find also that the most of request contain an ">" but there is some request which contain "=" to an 
+ascii value : we have than to use a litle script to pick up those request : https://drive.google.com/open?id=1SidJ8wsRbExBizQRoxoqzCodHf37eRgz
+and after getting the ascii we have just to convert it to text and get : sp4rk{1_n33d_c0ff33_70_br34k_7h15_ 5h337}c7f 
+
+
+
+
+
+
+
+
+
+
+
+
